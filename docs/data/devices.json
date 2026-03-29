@@ -1,0 +1,1600 @@
+[
+  {
+    "id": "amd-8845hs-gem12-64gb",
+    "name": "AMD Ryzen 7 8845HS Mini PC (GEM12) 64GB",
+    "vendor": "AMD",
+    "device_type": "Mini PC",
+    "chip": "AMD Ryzen 7 8845HS",
+    "memory_capacity_gb": 64,
+    "memory_bandwidth_gbs": 89.6,
+    "memory_type": "DDR5",
+    "memory_speed": "5600MT/s",
+    "memory_bus_width": "dual-channel",
+    "price_usd": 500,
+    "power_watts": 45,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "Q4_K_M",
+        "framework": "LM Studio",
+        "decode_tps": 13.57,
+        "note": "measured"
+      },
+      {
+        "model": "Qwen3.5-35B-A3B",
+        "quant": "Q4_K_M",
+        "framework": "LM Studio",
+        "decode_tps": 25.95,
+        "note": "measured"
+      },
+      {
+        "model": "Qwen3.5-27B",
+        "quant": "Q4_K_M",
+        "framework": "LM Studio",
+        "decode_tps": 4.32,
+        "note": "measured"
+      }
+    ],
+    "submitted_by": "zp",
+    "date": "2026-03-29",
+    "_has_errors": false,
+    "_source_file": "amd-8845hs-gem12-64gb.md"
+  },
+  {
+    "id": "amd-radeon-ai-pro-r9700-32gb",
+    "name": "AMD Radeon AI PRO R9700 32GB",
+    "vendor": "AMD",
+    "device_type": "GPU",
+    "chip": "Navi 48 (RDNA 4, gfx1201)",
+    "memory_capacity_gb": 32,
+    "memory_bandwidth_gbs": 640,
+    "memory_type": "GDDR6",
+    "memory_speed": "20Gbps",
+    "memory_bus_width": "256bit",
+    "tops_int8": 766,
+    "tops_note": "1531 TOPS INT4 sparse / 2, AI accelerator based",
+    "price_usd": 1349,
+    "power_watts": 300,
+    "interface": "PCIe x16",
+    "benchmarks": [
+      {
+        "model": "Qwen3.5-35B-A3B",
+        "quant": "Q4_K_XL",
+        "framework": "llama.cpp Vulkan",
+        "decode_tps": 138.0,
+        "context_length": 8192,
+        "note": "measured, latest llama.cpp, source: llama.cpp #19890"
+      },
+      {
+        "model": "Qwen3.5-27B",
+        "quant": "int4",
+        "framework": "llama.cpp Vulkan",
+        "decode_tps": 41.0,
+        "context_length": 8192,
+        "note": "measured, latest llama.cpp, source: llama.cpp #19890"
+      },
+      {
+        "model": "Qwen3-30B-A3B",
+        "quant": "Q4_K_M",
+        "framework": "llama.cpp Vulkan",
+        "decode_tps": 183.5,
+        "prefill_tps": 3033.0,
+        "context_length": 512,
+        "note": "measured, FA ON, 5-run mean, source: llama.cpp #19890"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "llama.cpp Vulkan",
+        "decode_tps": 123.0,
+        "estimated": true,
+        "estimated_from": "Qwen3.5-27B 41 tps (27B -> 9B, x3.0, Dense->Dense)"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-28",
+    "_has_errors": false,
+    "_source_file": "amd-radeon-ai-pro-r9700-32gb.md"
+  },
+  {
+    "id": "amd-rx-7900-xt-20gb",
+    "name": "AMD Radeon RX 7900 XT 20GB",
+    "vendor": "AMD",
+    "device_type": "GPU",
+    "chip": "Navi 31",
+    "memory_capacity_gb": 20,
+    "memory_bandwidth_gbs": 800,
+    "memory_type": "GDDR6",
+    "tops_int8": 103,
+    "tops_note": "Shader-based INT8, no dedicated tensor cores",
+    "price_usd": 699,
+    "power_watts": 315,
+    "interface": "PCIe x16",
+    "benchmarks": [
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "llama.cpp Vulkan",
+        "decode_tps": 126.8,
+        "estimated": true,
+        "estimated_from": "RX 7900 XTX 9B 152.2 tps scaled by BW ratio 800/960"
+      },
+      {
+        "model": "Qwen3.5-27B",
+        "quant": "int4",
+        "framework": "llama.cpp Vulkan",
+        "decode_tps": 42.2,
+        "estimated": true,
+        "estimated_from": "RX 7900 XTX 27B 50.6 tps scaled by BW ratio 800/960"
+      },
+      {
+        "model": "Qwen3.5-35B-A3B",
+        "quant": "int4",
+        "framework": "llama.cpp Vulkan",
+        "decode_tps": 110.8,
+        "estimated": true,
+        "estimated_from": "RX 7900 XTX 35B-A3B 133.0 tps scaled by BW ratio 800/960"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-29",
+    "_has_errors": false,
+    "_source_file": "amd-rx-7900-xt-20gb.md"
+  },
+  {
+    "id": "amd-rx-7900-xtx-24gb",
+    "name": "AMD Radeon RX 7900 XTX 24GB",
+    "vendor": "AMD",
+    "device_type": "GPU",
+    "chip": "Navi 31",
+    "memory_capacity_gb": 24,
+    "memory_bandwidth_gbs": 960,
+    "memory_type": "GDDR6",
+    "tops_int8": 123,
+    "tops_note": "Shader-based INT8, no dedicated tensor cores",
+    "price_usd": 1299,
+    "power_watts": 355,
+    "interface": "PCIe x16",
+    "benchmarks": [
+      {
+        "model": "Llama 7B",
+        "quant": "Q4_0",
+        "framework": "llama.cpp Vulkan",
+        "decode_tps": 195.3,
+        "prefill_tps": 3333.0,
+        "note": "measured, FA=1"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "llama.cpp Vulkan",
+        "decode_tps": 152.2,
+        "prefill_tps": 2596.0,
+        "estimated": true,
+        "estimated_from": "Llama 7B Q4_0 llama-bench tg128, factor 7/9=0.78"
+      },
+      {
+        "model": "Qwen3.5-27B",
+        "quant": "int4",
+        "framework": "llama.cpp Vulkan",
+        "decode_tps": 50.6,
+        "estimated": true,
+        "estimated_from": "Llama 7B Q4_0 (7B -> 27B, x0.259, Dense->Dense, bandwidth model)"
+      },
+      {
+        "model": "Qwen3.5-35B-A3B",
+        "quant": "int4",
+        "framework": "llama.cpp Vulkan",
+        "decode_tps": 133.0,
+        "estimated": true,
+        "estimated_from": "RTX 4090 Qwen3 30B-A3B 139.7 tps scaled by BW ratio 960/1008 (MoE->MoE)"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-28",
+    "_has_errors": false,
+    "_source_file": "amd-rx-7900-xtx-24gb.md"
+  },
+  {
+    "id": "apple-mac-mini-m4-16gb",
+    "name": "Apple Mac Mini M4 16GB",
+    "vendor": "Apple",
+    "device_type": "Mini PC",
+    "chip": "Apple M4",
+    "memory_capacity_gb": 16,
+    "memory_bandwidth_gbs": 120,
+    "memory_type": "LPDDR5",
+    "price_usd": 599,
+    "power_watts": 65,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "MLX",
+        "decode_tps": 21.0,
+        "note": "measured, source: reddit.com/r/LocalLLM 'base M4 Mac Mini hits 21 tok/s'"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-28",
+    "_has_errors": false,
+    "_source_file": "apple-mac-mini-m4-16gb.md"
+  },
+  {
+    "id": "apple-mac-mini-m4-pro-24gb",
+    "name": "Apple Mac Mini M4 Pro 24GB",
+    "vendor": "Apple",
+    "device_type": "Mini PC",
+    "chip": "Apple M4 Pro (12-core CPU, 20-core GPU)",
+    "memory_capacity_gb": 24,
+    "memory_bandwidth_gbs": 273,
+    "memory_type": "LPDDR5X",
+    "price_usd": 1399,
+    "power_watts": 65,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "llama.cpp",
+        "decode_tps": 39.5,
+        "prefill_tps": 342.9,
+        "estimated": true,
+        "estimated_from": "Llama 7B Q4_0 llama-bench tg128/pp512, factor 7/9=0.78"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-28",
+    "_has_errors": false,
+    "_source_file": "apple-mac-mini-m4-pro-24gb.md"
+  },
+  {
+    "id": "apple-mac-mini-m4-pro-48gb",
+    "name": "Apple Mac Mini M4 Pro 48GB",
+    "vendor": "Apple",
+    "device_type": "Mini PC",
+    "chip": "Apple M4 Pro",
+    "memory_capacity_gb": 48,
+    "memory_bandwidth_gbs": 273,
+    "memory_type": "LPDDR5X",
+    "memory_speed": "8533MT/s",
+    "memory_bus_width": "256bit",
+    "tops_int8": 38,
+    "tops_note": "Neural Engine only, GPU separate",
+    "price_usd": 1799,
+    "power_watts": 65,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "Qwen3.5-27B",
+        "quant": "int4",
+        "framework": "llama.cpp / MLX",
+        "decode_tps": 9.0,
+        "note": "measured, multiple users report 8-10 tps, source: reddit.com/r/LocalLLM"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "llama.cpp / MLX",
+        "decode_tps": 27.0,
+        "estimated": true,
+        "estimated_from": "Qwen3.5-27B measured 9 tps (27B -> 9B, x3.0, Dense->Dense)"
+      },
+      {
+        "model": "Qwen3.5-35B-A3B",
+        "quant": "int4",
+        "framework": "llama.cpp",
+        "decode_tps": 55.0,
+        "note": "from earlier community reports, pending re-verification"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-29",
+    "_has_errors": false,
+    "_source_file": "apple-mac-mini-m4-pro-48gb.md"
+  },
+  {
+    "id": "apple-mac-studio-m1-ultra-64gb",
+    "name": "Apple Mac Studio M1 Ultra 64GB (48-core GPU)",
+    "vendor": "Apple",
+    "device_type": "Mini PC",
+    "chip": "Apple M1 Ultra (20-core CPU, 48-core GPU)",
+    "memory_capacity_gb": 64,
+    "memory_bandwidth_gbs": 800,
+    "memory_type": "LPDDR5",
+    "price_usd": 2500,
+    "power_watts": 90,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "Qwen3.5-35B-A3B",
+        "quant": "int4",
+        "framework": "MLX/Ollama",
+        "decode_tps": 60.0,
+        "note": "measured, source: reddit.com/r/LocalLLM"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "MLX",
+        "decode_tps": 90.0,
+        "note": "M2 Ultra 64GB (same 800 GB/s BW) measured 90 tps, source: reddit.com/r/LocalLLM"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-29",
+    "_has_errors": false,
+    "_source_file": "apple-mac-studio-m1-ultra-64gb.md"
+  },
+  {
+    "id": "apple-mac-studio-m3-ultra-256gb",
+    "name": "Apple Mac Studio M3 Ultra 256GB",
+    "vendor": "Apple",
+    "device_type": "Mini PC",
+    "chip": "Apple M3 Ultra (28P+8E CPU, 80-core GPU)",
+    "memory_capacity_gb": 256,
+    "memory_bandwidth_gbs": 800,
+    "memory_type": "LPDDR5X",
+    "price_usd": 6749,
+    "power_watts": 200,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "Qwen3-30B-A3B",
+        "quant": "int4",
+        "framework": "MLX",
+        "decode_tps": 76.3,
+        "note": "measured, deepnewz benchmark"
+      },
+      {
+        "model": "Qwen3.5-122B-A10B",
+        "quant": "int8",
+        "framework": "MLX",
+        "decode_tps": 42.5,
+        "note": "measured, Unsloth guide"
+      },
+      {
+        "model": "LLaMA 7B",
+        "quant": "Q4_0",
+        "framework": "llama.cpp",
+        "decode_tps": 92.1,
+        "note": "measured, llama.cpp discussion #4167, 80-core GPU"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "llama.cpp",
+        "decode_tps": 71.6,
+        "estimated": true,
+        "estimated_from": "LLaMA 7B Q4_0 92.1 tps (7B -> 9B, x0.78, Dense->Dense)"
+      },
+      {
+        "model": "Qwen3.5-27B",
+        "quant": "int4",
+        "framework": "MLX",
+        "decode_tps": 19.9,
+        "estimated": true,
+        "estimated_from": "Qwen3 32B Q4 16.8 tps (32B -> 27B, x1.19, Dense->Dense)"
+      },
+      {
+        "model": "Qwen3.5-35B-A3B",
+        "quant": "int4",
+        "framework": "MLX",
+        "decode_tps": 76.3,
+        "estimated": true,
+        "estimated_from": "Qwen3-30B-A3B (3B -> 3B active, x1.00, MoE->MoE)"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-29",
+    "_has_errors": false,
+    "_source_file": "apple-mac-studio-m3-ultra-256gb.md"
+  },
+  {
+    "id": "apple-mac-studio-m3-ultra-96gb",
+    "name": "Apple Mac Studio M3 Ultra 96GB",
+    "vendor": "Apple",
+    "device_type": "Mini PC",
+    "chip": "Apple M3 Ultra (28P+8E CPU, 60-core GPU)",
+    "memory_capacity_gb": 96,
+    "memory_bandwidth_gbs": 800,
+    "memory_type": "LPDDR5X",
+    "price_usd": 4969,
+    "power_watts": 200,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "Gemma-3 27B",
+        "quant": "Q4",
+        "framework": "MLX",
+        "decode_tps": 41.0,
+        "note": "measured, Creative Strategies review"
+      },
+      {
+        "model": "LLaMA 7B",
+        "quant": "Q4_0",
+        "framework": "llama.cpp",
+        "decode_tps": 88.4,
+        "note": "measured, llama.cpp discussion #4167, 60-core GPU"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "MLX",
+        "decode_tps": 68.8,
+        "estimated": true,
+        "estimated_from": "LLaMA 7B Q4_0 88.4 tps (7B -> 9B, x0.78, Dense->Dense)"
+      },
+      {
+        "model": "Qwen3.5-27B",
+        "quant": "int4",
+        "framework": "MLX",
+        "decode_tps": 41.0,
+        "estimated": true,
+        "estimated_from": "Gemma-3 27B Q4 (27B -> 27B, x1.00, Dense->Dense)"
+      },
+      {
+        "model": "Qwen3.5-35B-A3B",
+        "quant": "int4",
+        "framework": "MLX",
+        "decode_tps": 76.3,
+        "estimated": true,
+        "estimated_from": "Qwen3-30B-A3B 76.3 tps on M3 Ultra 256GB (3B -> 3B active, x1.00, MoE->MoE, same bandwidth)"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-29",
+    "_has_errors": false,
+    "_source_file": "apple-mac-studio-m3-ultra-96gb.md"
+  },
+  {
+    "id": "apple-mac-studio-m4-max-128gb",
+    "name": "Apple Mac Studio M4 Max 128GB (40-core GPU)",
+    "vendor": "Apple",
+    "device_type": "Mini PC",
+    "chip": "Apple M4 Max (40-core GPU)",
+    "memory_capacity_gb": 128,
+    "memory_bandwidth_gbs": 546,
+    "memory_type": "LPDDR5X",
+    "price_usd": 3999,
+    "power_watts": 75,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "Qwen3.5-35B-A3B",
+        "quant": "int4",
+        "framework": "MLX/Ollama",
+        "decode_tps": 106.0,
+        "note": "measured on M4 Max 40-core 64GB (same 546 GB/s BW), source: reddit.com/r/LocalLLM"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "llama.cpp",
+        "decode_tps": 64.7,
+        "prefill_tps": 690.4,
+        "estimated": true,
+        "estimated_from": "Llama 7B Q4_0 llama-bench tg128/pp512, factor 7/9=0.78"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-28",
+    "_has_errors": false,
+    "_source_file": "apple-mac-studio-m4-max-128gb.md"
+  },
+  {
+    "id": "apple-mac-studio-m4-max-64gb",
+    "name": "Apple Mac Studio M4 Max 64GB (32-core GPU)",
+    "vendor": "Apple",
+    "device_type": "Mini PC",
+    "chip": "Apple M4 Max (32-core GPU)",
+    "memory_capacity_gb": 64,
+    "memory_bandwidth_gbs": 410,
+    "memory_type": "LPDDR5X",
+    "price_usd": 2400,
+    "power_watts": 75,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "llama.cpp",
+        "decode_tps": 54.5,
+        "prefill_tps": 556.5,
+        "estimated": true,
+        "estimated_from": "Llama 7B Q4_0 llama-bench tg128/pp512, factor 7/9=0.78"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-28",
+    "_has_errors": false,
+    "_source_file": "apple-mac-studio-m4-max-64gb.md"
+  },
+  {
+    "id": "axera-m4n-dock-ax650n",
+    "name": "AXera M4N-Dock (AX650N)",
+    "vendor": "AXera",
+    "device_type": "Dev Board",
+    "chip": "AX650N",
+    "memory_capacity_gb": 8,
+    "memory_bandwidth_gbs": 29,
+    "memory_type": "LPDDR4",
+    "memory_speed": "3733MT/s",
+    "memory_bus_width": "64bit",
+    "tops_int8": 14.4,
+    "tops_note": "NPU INT8",
+    "price_usd": 299,
+    "power_watts": 8,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "Qwen3-VL-8B",
+        "quant": "w4a16",
+        "framework": "Pulsar2 NPU",
+        "decode_tps": 4.5,
+        "image_encode_ms": 280,
+        "note": "measured, source: HuggingFace AXERA-TECH"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "w4a16",
+        "framework": "Pulsar2 NPU",
+        "decode_tps": 4.0,
+        "estimated": true,
+        "estimated_from": "Qwen3-VL-8B (8B -> 9B, x0.89, Dense->Dense)"
+      }
+    ],
+    "submitted_by": "axera",
+    "date": "2026-03-29",
+    "_has_errors": false,
+    "_source_file": "axera-m4n-dock-ax650n.md"
+  },
+  {
+    "id": "gmktec-evo-x2-ryzen-ai-max-395",
+    "name": "GMKtec EVO-X2 (Ryzen AI Max+ 395) 128GB",
+    "vendor": "GMKtec / AMD",
+    "device_type": "Mini PC",
+    "chip": "AMD Ryzen AI Max+ 395",
+    "memory_capacity_gb": 128,
+    "memory_bandwidth_gbs": 256,
+    "memory_type": "LPDDR5X",
+    "memory_speed": "8000MT/s",
+    "tops_int8": 50,
+    "tops_note": "XDNA2 NPU only, GPU compute separate",
+    "price_usd": 1800,
+    "power_watts": 65,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "Qwen3.5-35B-A3B",
+        "quant": "int4",
+        "framework": "llama.cpp ROCm",
+        "decode_tps": 64.7,
+        "estimated": true,
+        "estimated_from": "Qwen3.5-35B-A3B Q6_K_L measured 43.1 tps, Q4 model ~1.5x smaller -> x1.5"
+      },
+      {
+        "model": "Qwen3.5-122B-A10B",
+        "quant": "Q4_K_L",
+        "framework": "llama.cpp ROCm",
+        "decode_tps": 21.2,
+        "prefill_tps": 279.0,
+        "context_length": 5000,
+        "note": "measured, Bartowski quant, Framework Desktop same SoC"
+      },
+      {
+        "model": "Qwen3 8B",
+        "quant": "Q4_K_M",
+        "framework": "llama.cpp Vulkan",
+        "decode_tps": 33.5,
+        "note": "measured, source: nishtahir.com"
+      },
+      {
+        "model": "Qwen3 32B",
+        "quant": "Q4_K_M",
+        "framework": "Ollama",
+        "decode_tps": 9.4,
+        "note": "measured, source: nishtahir.com"
+      },
+      {
+        "model": "GPT-OSS-20B",
+        "quant": "MXFP4",
+        "framework": "llama.cpp ROCm",
+        "decode_tps": 65.7,
+        "note": "measured, MoE 3.6B active, source: nishtahir.com"
+      },
+      {
+        "model": "GPT-OSS-120B",
+        "quant": "MXFP4",
+        "framework": "llama.cpp ROCm",
+        "decode_tps": 46.1,
+        "note": "measured, MoE 5.1B active, source: nishtahir.com"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "llama.cpp",
+        "decode_tps": 29.8,
+        "estimated": true,
+        "estimated_from": "Qwen3 8B (8B -> 9B, x0.89, Dense->Dense)"
+      },
+      {
+        "model": "Qwen3.5-27B",
+        "quant": "int4",
+        "framework": "Ollama",
+        "decode_tps": 11.1,
+        "estimated": true,
+        "estimated_from": "Qwen3 32B (32B -> 27B, x1.19, Dense->Dense)"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-29",
+    "_has_errors": false,
+    "_source_file": "gmktec-evo-x2-ryzen-ai-max-395.md"
+  },
+  {
+    "id": "houmo-lq50-48gb",
+    "name": "HOUMO LQ50 M.2 (M50) 48GB",
+    "vendor": "HOUMO",
+    "device_type": "Accelerator",
+    "chip": "漫界 M50 (CIM Architecture)",
+    "memory_capacity_gb": 48,
+    "memory_bandwidth_gbs": 153.6,
+    "memory_type": "LPDDR5",
+    "memory_speed": "6400MT/s",
+    "memory_bus_width": "192bit",
+    "tops_int8": 160,
+    "tops_note": "INT8 dense, CIM (Compute-in-Memory)",
+    "price_usd": 1200,
+    "power_watts": 12,
+    "interface": "M.2 2280",
+    "benchmarks": [
+      {
+        "model": "8B Dense",
+        "quant": "int4",
+        "framework": "HOUMO SDK",
+        "decode_tps": 25.0,
+        "note": "measured, official claim WAIC 2025"
+      },
+      {
+        "model": "Qwen3-30B-A3B",
+        "quant": "int4",
+        "framework": "HOUMO SDK",
+        "decode_tps": 25.0,
+        "note": "measured, official communication"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "HOUMO SDK",
+        "decode_tps": 22.2,
+        "estimated": true,
+        "estimated_from": "8B Dense 25 tps (8B -> 9B, x0.89, Dense->Dense)"
+      },
+      {
+        "model": "Qwen3.5-27B",
+        "quant": "int4",
+        "framework": "HOUMO SDK",
+        "decode_tps": 7.4,
+        "estimated": true,
+        "estimated_from": "8B Dense 25 tps (8B -> 27B, x0.296, Dense->Dense, bandwidth model)"
+      },
+      {
+        "model": "Qwen3.5-35B-A3B",
+        "quant": "int4",
+        "framework": "HOUMO SDK",
+        "decode_tps": 25.0,
+        "estimated": true,
+        "estimated_from": "Qwen3-30B-A3B 25 tps (3B -> 3B active, x1.00, MoE->MoE)"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-29",
+    "_has_errors": false,
+    "_source_file": "houmo-lq50-48gb.md"
+  },
+  {
+    "id": "intel-arc-b580-12gb",
+    "name": "Intel Arc B580 12GB",
+    "vendor": "Intel",
+    "device_type": "GPU",
+    "chip": "BMG-G21",
+    "memory_capacity_gb": 12,
+    "memory_bandwidth_gbs": 456,
+    "memory_type": "GDDR6",
+    "price_usd": 260,
+    "power_watts": 150,
+    "interface": "PCIe x8",
+    "benchmarks": [
+      {
+        "model": "Llama 7B",
+        "quant": "Q4_0",
+        "framework": "llama.cpp Vulkan",
+        "decode_tps": 72.0,
+        "prefill_tps": 621.0,
+        "note": "measured, FA=1"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "llama.cpp Vulkan",
+        "decode_tps": 56.1,
+        "prefill_tps": 484.0,
+        "estimated": true,
+        "estimated_from": "Llama 7B Q4_0 llama-bench tg128, factor 7/9=0.78"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-28",
+    "_has_errors": false,
+    "_source_file": "intel-arc-b580-12gb.md"
+  },
+  {
+    "id": "nvidia-dgx-spark",
+    "name": "NVIDIA DGX Spark",
+    "vendor": "NVIDIA",
+    "device_type": "Mini PC",
+    "chip": "Grace Blackwell GB10",
+    "memory_capacity_gb": 128,
+    "memory_bandwidth_gbs": 273,
+    "memory_type": "LPDDR5X",
+    "memory_speed": "8533MT/s",
+    "memory_bus_width": "256bit",
+    "tops_int8": 1000,
+    "tops_note": "FP4 sparse, dense INT8 estimated ~250-500 TOPS, compute far exceeds memory bandwidth ceiling",
+    "price_usd": 4699,
+    "power_watts": 240,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "Qwen3.5-35B-A3B",
+        "quant": "NVFP4",
+        "framework": "Atlas",
+        "decode_tps": 102.0,
+        "note": "measured, optimized SM121 CUDA kernels"
+      },
+      {
+        "model": "Qwen3.5-122B-A10B",
+        "quant": "NVFP4",
+        "framework": "Atlas",
+        "decode_tps": 47.0,
+        "note": "measured, single GB10"
+      },
+      {
+        "model": "Llama 3.1 8B",
+        "quant": "Q4_K_M",
+        "framework": "Ollama",
+        "decode_tps": 38.0,
+        "prefill_tps": 7614.0,
+        "note": "measured"
+      },
+      {
+        "model": "Qwen3 32B",
+        "quant": "Q4_K_M",
+        "framework": "Ollama",
+        "decode_tps": 9.4,
+        "note": "measured"
+      },
+      {
+        "model": "GPT-OSS-20B",
+        "quant": "MXFP4",
+        "framework": "Ollama",
+        "decode_tps": 58.3,
+        "prefill_tps": 3224.0,
+        "note": "measured, MoE 3.6B active"
+      },
+      {
+        "model": "GPT-OSS-120B",
+        "quant": "Q4_K_S",
+        "framework": "LM Studio",
+        "decode_tps": 48.96,
+        "note": "measured, MoE 5.1B active"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "LM Studio",
+        "decode_tps": 42.0,
+        "estimated": true,
+        "estimated_from": "LM Studio Qwen3.5-9B Q8_0 (20.96 tps, model size halved at Q4 -> x2)"
+      },
+      {
+        "model": "Qwen3.5-27B",
+        "quant": "int4",
+        "framework": "LM Studio",
+        "decode_tps": 13.4,
+        "estimated": true,
+        "estimated_from": "LM Studio Qwen3.5-27B Q8_0 (6.70 tps, model size halved at Q4 -> x2)"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-29",
+    "_has_errors": false,
+    "_source_file": "nvidia-dgx-spark.md"
+  },
+  {
+    "id": "nvidia-jetson-agx-orin-64gb",
+    "name": "NVIDIA Jetson AGX Orin 64GB",
+    "vendor": "NVIDIA",
+    "device_type": "Dev Board",
+    "chip": "Jetson AGX Orin",
+    "memory_capacity_gb": 64,
+    "memory_bandwidth_gbs": 205,
+    "memory_type": "LPDDR5",
+    "tops_int8": 275,
+    "tops_note": "GPU + DLA combined, sparse",
+    "price_usd": 1999,
+    "power_watts": 60,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "Llama 7B",
+        "quant": "Q4_0",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 36.6,
+        "prefill_tps": 1090.0,
+        "note": "measured, FA=1"
+      },
+      {
+        "model": "Qwen3.5-4B",
+        "quant": "Q4_K_M",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 27.0,
+        "note": "measured, source: Liquid AI LinkedIn"
+      },
+      {
+        "model": "Qwen3.5-0.8B",
+        "quant": "Q4_K_M",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 83.4,
+        "note": "measured, source: Liquid AI LinkedIn"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 12.0,
+        "estimated": true,
+        "estimated_from": "Qwen3.5-4B Q4_K_M (4B -> 9B, x0.44, Dense->Dense, same architecture)"
+      },
+      {
+        "model": "Qwen3.5-27B",
+        "quant": "int4",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 4.0,
+        "estimated": true,
+        "estimated_from": "Qwen3.5-4B Q4_K_M (4B -> 27B, x0.148, Dense->Dense, same architecture)"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-29",
+    "_has_errors": false,
+    "_source_file": "nvidia-jetson-agx-orin-64gb.md"
+  },
+  {
+    "id": "nvidia-jetson-agx-thor-128gb",
+    "name": "NVIDIA Jetson AGX Thor 128GB",
+    "vendor": "NVIDIA",
+    "device_type": "Dev Board",
+    "chip": "Jetson AGX Thor (T5000)",
+    "memory_capacity_gb": 128,
+    "memory_bandwidth_gbs": 273,
+    "memory_type": "LPDDR5X",
+    "tops_int8": 1035,
+    "tops_note": "FP8 TOPS, Blackwell architecture",
+    "price_usd": 3499,
+    "power_watts": 130,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "Qwen3-30B-A3B",
+        "quant": "int4",
+        "framework": "vLLM",
+        "decode_tps": 61.0,
+        "note": "measured, concurrency=1, NVIDIA official benchmark"
+      },
+      {
+        "model": "Llama 3.1 8B",
+        "quant": "int4",
+        "framework": "vLLM",
+        "decode_tps": 41.3,
+        "note": "measured, concurrency=1, NVIDIA official benchmark"
+      },
+      {
+        "model": "Qwen3 32B",
+        "quant": "int4",
+        "framework": "vLLM",
+        "decode_tps": 13.19,
+        "note": "measured, concurrency=1, NVIDIA official benchmark"
+      },
+      {
+        "model": "Llama 3.3 70B",
+        "quant": "int4",
+        "framework": "vLLM",
+        "decode_tps": 4.7,
+        "note": "measured, concurrency=1, NVIDIA official benchmark"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "vLLM",
+        "decode_tps": 36.7,
+        "estimated": true,
+        "estimated_from": "Llama 3.1 8B (8B -> 9B, x0.89, Dense->Dense)"
+      },
+      {
+        "model": "Qwen3.5-27B",
+        "quant": "int4",
+        "framework": "vLLM",
+        "decode_tps": 15.6,
+        "estimated": true,
+        "estimated_from": "Qwen3 32B (32B -> 27B, x1.19, Dense->Dense)"
+      },
+      {
+        "model": "Qwen3.5-35B-A3B",
+        "quant": "int4",
+        "framework": "vLLM",
+        "decode_tps": 61.0,
+        "estimated": true,
+        "estimated_from": "Qwen3-30B-A3B (3B -> 3B active, x1.00, MoE->MoE)"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-29",
+    "_has_errors": false,
+    "_source_file": "nvidia-jetson-agx-thor-128gb.md"
+  },
+  {
+    "id": "nvidia-jetson-orin-nano-super-8gb",
+    "name": "NVIDIA Jetson Orin Nano Super 8GB",
+    "vendor": "NVIDIA",
+    "device_type": "Dev Board",
+    "chip": "Jetson Orin Nano (Super)",
+    "memory_capacity_gb": 8,
+    "memory_bandwidth_gbs": 102,
+    "memory_type": "LPDDR5",
+    "memory_speed": "6400MHz",
+    "memory_bus_width": "128bit",
+    "tops_int8": 67,
+    "tops_note": "GPU sparse, actual dense ~40 TOPS",
+    "price_usd": 249,
+    "power_watts": 25,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "Qwen3.5-2B",
+        "quant": "UD-Q4_K_XL",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 20.0,
+        "note": "measured, 100K context, source: reddit.com/r/LocalLLaMA"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 4.4,
+        "estimated": true,
+        "estimated_from": "Qwen3.5-2B (2B -> 9B, x0.22, Dense->Dense)"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-29",
+    "_has_errors": false,
+    "_source_file": "nvidia-jetson-orin-nano-super-8gb.md"
+  },
+  {
+    "id": "nvidia-rtx-3090-ti-24gb",
+    "name": "NVIDIA RTX 3090 Ti 24GB",
+    "vendor": "NVIDIA",
+    "device_type": "GPU",
+    "chip": "GA102 (Ampere)",
+    "memory_capacity_gb": 24,
+    "memory_bandwidth_gbs": 1008,
+    "memory_type": "GDDR6X",
+    "memory_speed": "21Gbps",
+    "memory_bus_width": "384bit",
+    "tops_int8": 320,
+    "tops_note": "INT8 Tensor Core, dense",
+    "price_usd": 1699,
+    "power_watts": 450,
+    "interface": "PCIe x16",
+    "benchmarks": [
+      {
+        "model": "Qwen3.5-35B-A3B",
+        "quant": "Q4_0",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 152.6,
+        "prefill_tps": 4256.0,
+        "note": "measured, mainline llama.cpp, ctx=0, source: llama.cpp #19890"
+      },
+      {
+        "model": "Qwen3.5-27B",
+        "quant": "IQ5_KS",
+        "framework": "ik_llama.cpp CUDA",
+        "decode_tps": 36.3,
+        "prefill_tps": 1536.0,
+        "note": "measured, 5-bit quant (~5.9 BPW), ctx=0, source: llama.cpp #19890"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 111.7,
+        "estimated": true,
+        "estimated_from": "Same BW as RTX 4090 (1008 GB/s), using 4090 Qwen3.5-9B measured value"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-28",
+    "_has_errors": false,
+    "_source_file": "nvidia-rtx-3090-ti-24gb.md"
+  },
+  {
+    "id": "nvidia-rtx-4060-ti-16gb",
+    "name": "NVIDIA RTX 4060 Ti 16GB",
+    "vendor": "NVIDIA",
+    "device_type": "GPU",
+    "chip": "AD106",
+    "memory_capacity_gb": 16,
+    "memory_bandwidth_gbs": 288,
+    "memory_type": "GDDR6",
+    "tops_int8": 353,
+    "tops_note": "FP8 Tensor Core sparse, dense INT8 ~176 TOPS",
+    "price_usd": 569,
+    "power_watts": 165,
+    "interface": "PCIe x16",
+    "benchmarks": [
+      {
+        "model": "Llama 7B",
+        "quant": "Q4_0",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 64.0,
+        "prefill_tps": 3803.0,
+        "note": "measured, FA=1"
+      },
+      {
+        "model": "Qwen3 8B",
+        "quant": "Q4_K_XL",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 34.3,
+        "context_length": 16384,
+        "note": "measured, Hardware Corner"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 49.9,
+        "prefill_tps": 2963.0,
+        "estimated": true,
+        "estimated_from": "Llama 7B Q4_0 llama-bench tg128, factor 7/9=0.78"
+      },
+      {
+        "model": "GPT-OSS-20B",
+        "quant": "Q4_K_XL",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 57.8,
+        "context_length": 16384,
+        "note": "measured, MoE 3.6B active, Hardware Corner"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-28",
+    "_has_errors": false,
+    "_source_file": "nvidia-rtx-4060-ti-16gb.md"
+  },
+  {
+    "id": "nvidia-rtx-4090-24gb",
+    "name": "NVIDIA RTX 4090 24GB",
+    "vendor": "NVIDIA",
+    "device_type": "GPU",
+    "chip": "AD102",
+    "memory_capacity_gb": 24,
+    "memory_bandwidth_gbs": 1008,
+    "memory_type": "GDDR6X",
+    "tops_int8": 1321,
+    "tops_note": "FP8 Tensor Core sparse, dense INT8 ~660 TOPS",
+    "price_usd": 3499,
+    "power_watts": 450,
+    "interface": "PCIe x16",
+    "benchmarks": [
+      {
+        "model": "Llama 7B",
+        "quant": "Q4_0",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 189.0,
+        "prefill_tps": 14771.0,
+        "note": "measured, FA=1, source: llama.cpp #15013"
+      },
+      {
+        "model": "Qwen3 8B",
+        "quant": "Q4_K_XL",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 104.3,
+        "context_length": 16384,
+        "note": "measured, source: Hardware Corner"
+      },
+      {
+        "model": "Qwen3 30B-A3B",
+        "quant": "Q4_K_XL",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 139.7,
+        "prefill_tps": 4549.0,
+        "context_length": 16384,
+        "note": "measured, MoE 3B active, source: Hardware Corner"
+      },
+      {
+        "model": "Qwen3 32B",
+        "quant": "Q4_K_XL",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 37.7,
+        "prefill_tps": 1685.0,
+        "context_length": 16384,
+        "note": "measured, Dense 32B, source: Hardware Corner"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "Q4_K_M",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 111.7,
+        "note": "measured, source: reddit.com/r/LocalLLaMA"
+      },
+      {
+        "model": "Qwen3.5-27B",
+        "quant": "Q4_K_M",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 40.4,
+        "note": "measured, source: reddit.com/r/LocalLLaMA"
+      },
+      {
+        "model": "Qwen3.5-35B-A3B",
+        "quant": "Q4_K_M",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 149.8,
+        "note": "measured, source: reddit.com/r/LocalLLaMA"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-28",
+    "_has_errors": false,
+    "_source_file": "nvidia-rtx-4090-24gb.md"
+  },
+  {
+    "id": "nvidia-rtx-5070-12gb",
+    "name": "NVIDIA GeForce RTX 5070 12GB",
+    "vendor": "NVIDIA",
+    "device_type": "GPU",
+    "chip": "GB205 (Blackwell)",
+    "memory_capacity_gb": 12,
+    "memory_bandwidth_gbs": 672,
+    "memory_type": "GDDR7",
+    "tops_int8": 988,
+    "tops_note": "Tensor Core INT8",
+    "price_usd": 669,
+    "power_watts": 250,
+    "interface": "PCIe x16",
+    "benchmarks": [
+      {
+        "model": "Qwen3 8B",
+        "quant": "Q4_K_XL",
+        "framework": "llama.cpp",
+        "decode_tps": 59.1,
+        "prefill_tps": 1600.0,
+        "context_length": 16384,
+        "note": "measured, Hardware Corner GPU ranking"
+      },
+      {
+        "model": "Qwen3 14B",
+        "quant": "Q4_K_XL",
+        "framework": "llama.cpp",
+        "decode_tps": 40.6,
+        "prefill_tps": 1315.0,
+        "context_length": 16384,
+        "note": "measured, Hardware Corner GPU ranking"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "Q4_K_XL",
+        "framework": "llama.cpp",
+        "decode_tps": 52.5,
+        "prefill_tps": 1422.0,
+        "estimated": true,
+        "estimated_from": "Qwen3 8B (8B -> 9B, x0.89, Dense->Dense)"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-29",
+    "_has_errors": false,
+    "_source_file": "nvidia-rtx-5070-12gb.md"
+  },
+  {
+    "id": "nvidia-rtx-5080-16gb",
+    "name": "NVIDIA GeForce RTX 5080 16GB",
+    "vendor": "NVIDIA",
+    "device_type": "GPU",
+    "chip": "GB203 (Blackwell)",
+    "memory_capacity_gb": 16,
+    "memory_bandwidth_gbs": 960,
+    "memory_type": "GDDR7",
+    "tops_int8": 1801,
+    "tops_note": "Tensor Core INT8",
+    "price_usd": 1499,
+    "power_watts": 360,
+    "interface": "PCIe x16",
+    "benchmarks": [
+      {
+        "model": "Qwen3 8B",
+        "quant": "Q4_K",
+        "framework": "llama.cpp",
+        "decode_tps": 129.1,
+        "prefill_tps": 6410.0,
+        "note": "measured, Hardware Corner GPU ranking, 4K context"
+      },
+      {
+        "model": "Qwen3 14B",
+        "quant": "Q4_K",
+        "framework": "llama.cpp",
+        "decode_tps": 80.6,
+        "prefill_tps": 3820.0,
+        "note": "measured, Hardware Corner GPU ranking, 4K context"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "Q4_K",
+        "framework": "llama.cpp",
+        "decode_tps": 114.8,
+        "prefill_tps": 5698.0,
+        "estimated": true,
+        "estimated_from": "Qwen3 8B (8B -> 9B, x0.89, Dense->Dense)"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-29",
+    "_has_errors": false,
+    "_source_file": "nvidia-rtx-5080-16gb.md"
+  },
+  {
+    "id": "nvidia-rtx-5090-32gb",
+    "name": "NVIDIA RTX 5090 32GB",
+    "vendor": "NVIDIA",
+    "device_type": "GPU",
+    "chip": "GB202",
+    "memory_capacity_gb": 32,
+    "memory_bandwidth_gbs": 1792,
+    "memory_type": "GDDR7",
+    "tops_int8": 3352,
+    "tops_note": "FP4 Tensor Core sparse, actual dense INT8 significantly lower",
+    "price_usd": 3999,
+    "power_watts": 575,
+    "interface": "PCIe x16",
+    "benchmarks": [
+      {
+        "model": "Llama 7B",
+        "quant": "Q4_0",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 300.4,
+        "prefill_tps": 14970.0,
+        "note": "measured, FA=1"
+      },
+      {
+        "model": "Qwen3 8B",
+        "quant": "Q4_K_XL",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 145.3,
+        "context_length": 16384,
+        "note": "measured, Hardware Corner"
+      },
+      {
+        "model": "Qwen3 30B-A3B",
+        "quant": "Q4_K_XL",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 141.6,
+        "prefill_tps": 4669.0,
+        "context_length": 16384,
+        "note": "measured, MoE 3B active, Hardware Corner"
+      },
+      {
+        "model": "Qwen3 32B",
+        "quant": "Q4_K_XL",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 50.9,
+        "prefill_tps": 2077.0,
+        "context_length": 16384,
+        "note": "measured, Dense 32B, Hardware Corner"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 234.0,
+        "prefill_tps": 11650.0,
+        "estimated": true,
+        "estimated_from": "Llama 7B Q4_0 llama-bench tg128, factor 7/9=0.78"
+      },
+      {
+        "model": "Qwen3.5-27B",
+        "quant": "int4",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 90.0,
+        "note": "measured, source HN"
+      },
+      {
+        "model": "Qwen3.5-35B-A3B",
+        "quant": "int4",
+        "framework": "llama.cpp CUDA",
+        "decode_tps": 194.0,
+        "note": "measured, source llama.cpp"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-28",
+    "_has_errors": false,
+    "_source_file": "nvidia-rtx-5090-32gb.md"
+  },
+  {
+    "id": "qualcomm-snapdragon-x-elite-laptop",
+    "name": "Snapdragon X Elite Laptop (e.g. Surface Laptop 7)",
+    "vendor": "Qualcomm",
+    "device_type": "Mini PC",
+    "chip": "Snapdragon X Elite (12-core Oryon)",
+    "memory_capacity_gb": 32,
+    "memory_bandwidth_gbs": 135,
+    "memory_type": "LPDDR5X",
+    "price_usd": 1600,
+    "power_watts": 25,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "Llama 7B",
+        "quant": "Q4_0_4_8",
+        "framework": "llama.cpp CPU",
+        "decode_tps": 23.4,
+        "note": "measured"
+      },
+      {
+        "model": "Qwen2 7B",
+        "quant": "Q4_0",
+        "framework": "llama.cpp CPU",
+        "decode_tps": 20.3,
+        "note": "measured"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "llama.cpp CPU",
+        "decode_tps": 18.2,
+        "estimated": true,
+        "estimated_from": "Llama 7B Q4_0_4_8 (7B -> 9B, x0.78, Dense->Dense)"
+      }
+    ],
+    "submitted_by": "benchmark-team",
+    "date": "2026-03-28",
+    "_has_errors": false,
+    "_source_file": "qualcomm-snapdragon-x-elite-laptop.md"
+  },
+  {
+    "id": "raspberry-pi-5-16gb",
+    "name": "Raspberry Pi 5 16GB",
+    "vendor": "Raspberry Pi",
+    "device_type": "Dev Board",
+    "chip": "BCM2712 (Cortex-A76 x4)",
+    "memory_capacity_gb": 16,
+    "memory_bandwidth_gbs": 34,
+    "memory_type": "LPDDR4X",
+    "price_usd": 205,
+    "power_watts": 12,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "TinyLlama 1.1B",
+        "quant": "Q4_K_M",
+        "framework": "llama.cpp",
+        "decode_tps": 10.0,
+        "note": "measured"
+      },
+      {
+        "model": "Llama 3.2 3B",
+        "quant": "Q4_K_M",
+        "framework": "llama.cpp",
+        "decode_tps": 5.0,
+        "note": "measured"
+      },
+      {
+        "model": "Llama 7B",
+        "quant": "Q4_K_M",
+        "framework": "llama.cpp",
+        "decode_tps": 2.0,
+        "note": "measured, approximate"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "llama.cpp",
+        "decode_tps": 1.6,
+        "estimated": true,
+        "estimated_from": "Llama 7B (7B active -> 9B active, x0.78)"
+      }
+    ],
+    "submitted_by": "benchmark-team",
+    "date": "2026-03-28",
+    "_has_errors": false,
+    "_source_file": "raspberry-pi-5-16gb.md"
+  },
+  {
+    "id": "rockchip-rk3588-24gb",
+    "name": "Rockchip RK3588 Dev Board 24GB (Rock 5B+)",
+    "vendor": "Rockchip",
+    "device_type": "Dev Board",
+    "chip": "RK3588",
+    "memory_capacity_gb": 24,
+    "memory_bandwidth_gbs": 34,
+    "memory_type": "LPDDR4X",
+    "memory_speed": "4266MT/s",
+    "memory_bus_width": "64bit",
+    "tops_int8": 6,
+    "tops_note": "NPU only (3 cores), not used for LLM inference",
+    "price_usd": 387,
+    "power_watts": 15,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "Q4_K_M",
+        "framework": "llama.cpp CPU",
+        "decode_tps": 2.48,
+        "prefill_tps": 7.6,
+        "context_length": 8192,
+        "note": "measured, 4 threads, CPU only"
+      },
+      {
+        "model": "Qwen3.5-4B",
+        "quant": "Q4_K_M",
+        "framework": "llama.cpp CPU",
+        "decode_tps": 3.62,
+        "prefill_tps": 13.0,
+        "context_length": 16384,
+        "note": "measured, 4 threads"
+      },
+      {
+        "model": "Qwen3.5-2B",
+        "quant": "Q4_K_M",
+        "framework": "llama.cpp CPU",
+        "decode_tps": 8.68,
+        "prefill_tps": 32.4,
+        "context_length": 32768,
+        "note": "measured, 4 threads"
+      },
+      {
+        "model": "Qwen3.5-0.8B",
+        "quant": "Q4_K_M",
+        "framework": "llama.cpp CPU",
+        "decode_tps": 12.07,
+        "prefill_tps": 54.6,
+        "context_length": 16384,
+        "note": "measured, 4 threads"
+      },
+      {
+        "model": "Qwen3.5-27B",
+        "quant": "Q4_K_M",
+        "framework": "llama.cpp CPU",
+        "decode_tps": 0.62,
+        "prefill_tps": 1.37,
+        "context_length": 4096,
+        "note": "measured, 2 threads, not interactively usable"
+      }
+    ],
+    "submitted_by": "community",
+    "date": "2026-03-29",
+    "_has_errors": false,
+    "_source_file": "rockchip-rk3588-24gb.md"
+  },
+  {
+    "id": "sophon-bm1684x-16gb",
+    "name": "Sophon BM1684X AI Box 16GB",
+    "vendor": "Sophgo",
+    "device_type": "Accelerator",
+    "chip": "Sophon BM1684X",
+    "memory_capacity_gb": 16,
+    "memory_bandwidth_gbs": 75,
+    "memory_type": "DDR4",
+    "price_usd": 400,
+    "power_watts": 33,
+    "tops_int8": 32,
+    "tops_note": "BM1684X INT8 TOPS",
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "DeepSeek-R1-Distill 7B",
+        "quant": "INT4",
+        "framework": "LLM-TPU",
+        "decode_tps": 11.0,
+        "note": "measured"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "LLM-TPU",
+        "decode_tps": 8.6,
+        "estimated": true,
+        "estimated_from": "DS-R1-Distill 7B (7B -> 9B, x0.78, Dense->Dense)"
+      }
+    ],
+    "submitted_by": "benchmark-team",
+    "date": "2026-03-28",
+    "_has_errors": false,
+    "_source_file": "sophon-bm1684x-16gb.md"
+  },
+  {
+    "id": "tiiny-ai-pocket-lab",
+    "name": "Tiiny AI Pocket Lab",
+    "vendor": "Tiiny AI",
+    "device_type": "Accelerator",
+    "chip": "CIX P1 (CD8180) + HOUMO LQ50 (M50)",
+    "memory_capacity_gb": 80,
+    "memory_bandwidth_gbs": 153.6,
+    "memory_type": "LPDDR5X",
+    "memory_speed": "6400MT/s",
+    "memory_bus_width": "128bit",
+    "memory_note": "Two separate memory pools: 32GB on SoC side (102 GB/s) + 48GB on dNPU side (154 GB/s), interconnected via PCIe Gen4 x4 (~7 GB/s)",
+    "tops_int8": 190,
+    "tops_note": "SoC NPU 30T + dNPU 160T combined, heterogeneous compute units",
+    "price_usd": 1599,
+    "power_watts": 65,
+    "interface": "Onboard",
+    "benchmarks": [
+      {
+        "model": "GPT-OSS-120B",
+        "quant": "int4",
+        "framework": "PowerInfer",
+        "decode_tps": 16.85,
+        "prefill_tps": 104.7,
+        "note": "measured, MoE 5.1B active, cross-pool, short context"
+      },
+      {
+        "model": "GPT-OSS-20B",
+        "quant": "int4",
+        "framework": "PowerInfer",
+        "decode_tps": 29.0,
+        "prefill_tps": 718.6,
+        "note": "measured, MoE 3.6B active, single SoC pool, source: bay41.com"
+      },
+      {
+        "model": "Qwen3-30B-A3B",
+        "quant": "int4",
+        "framework": "PowerInfer",
+        "decode_tps": 28.0,
+        "note": "measured, MoE 3B active, source: Kickstarter official page"
+      },
+      {
+        "model": "Qwen3.5-9B",
+        "quant": "int4",
+        "framework": "HOUMO SDK",
+        "decode_tps": 22.2,
+        "estimated": true,
+        "estimated_from": "HOUMO LQ50 8B Dense 25 tps (8B -> 9B, x0.89, Dense->Dense, same dNPU chip)"
+      },
+      {
+        "model": "Qwen3.5-35B-A3B",
+        "quant": "int4",
+        "framework": "PowerInfer",
+        "decode_tps": 28.0,
+        "estimated": true,
+        "estimated_from": "Qwen3-30B-A3B (3B -> 3B active, x1.00, MoE->MoE)"
+      },
+      {
+        "model": "Qwen3.5-122B-A10B",
+        "quant": "int4",
+        "framework": "PowerInfer",
+        "decode_tps": 8.6,
+        "estimated": true,
+        "estimated_from": "GPT-OSS-120B (5.1B -> 10B active, x0.51, MoE->MoE, cross-pool)"
+      }
+    ],
+    "submitted_by": "bay41",
+    "date": "2026-03-25",
+    "_has_errors": false,
+    "_source_file": "tiiny-ai-pocket-lab.md"
+  }
+]

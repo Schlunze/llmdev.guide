@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Device Detail — llmdev.guide</title>
+  <meta name="description" content="Detailed LLM inference benchmark data for local inference devices.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9SCXT645JD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9SCXT645JD');</script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    .device-detail {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .device-detail .back-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    .device-detail .back-link:hover { text-decoration: underline; }
+    .device-detail .specs-table {
+      width: 100%;
+      margin-bottom: 24px;
+    }
+    .device-detail .specs-table td {
+      padding: 6px 12px;
+    }
+    .device-detail .specs-table td:first-child {
+      color: var(--text-muted);
+      font-weight: 500;
+      width: 200px;
+      white-space: nowrap;
+    }
+    .device-detail .bench-table {
+      width: 100%;
+      margin-bottom: 24px;
+    }
+    .device-detail .bench-table th {
+      cursor: default;
+    }
+    .device-detail .estimated-tag {
+      background: var(--orange);
+      color: var(--bg);
+      font-size: 10px;
+      padding: 1px 5px;
+      border-radius: 3px;
+      margin-left: 4px;
+    }
+    .device-detail .suspicious-tag {
+      background: var(--red);
+      color: #fff;
+      font-size: 10px;
+      padding: 1px 5px;
+      border-radius: 3px;
+      margin-left: 4px;
+    }
+    .device-detail .md-body {
+      line-height: 1.8;
+    }
+    .device-detail .md-body h1 { display: none; } /* hide duplicate title */
+    .device-detail .md-body h2 {
+      font-size: 18px;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    .device-detail .md-body h3 { font-size: 15px; margin-top: 20px; }
+    .device-detail .md-body p { margin-bottom: 12px; }
+    .device-detail .md-body code {
+      background: var(--bg-input);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+    .device-detail .md-body pre {
+      background: var(--bg-input);
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-bottom: 16px;
+    }
+    .device-detail .md-body pre code { background: none; padding: 0; }
+    .device-detail .md-body a { color: var(--accent); }
+    .device-detail .md-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+    }
+    .device-detail .md-body table th,
+    .device-detail .md-body table td {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+    .device-detail .md-body table th {
+      background: var(--bg-input);
+    }
+    .device-detail .md-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding-left: 16px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .device-detail .md-body img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="device-detail" id="detail">
+    <a class="back-link" href="javascript:history.back()" onclick="if(!document.referrer||!document.referrer.includes(location.host)){location.href='index.html';return false;}">&larr; Back to overview</a>
+    <div id="loading">Loading...</div>
+  </div>
+
+  <script>
+    async function loadDevice() {
+      const params = new URLSearchParams(window.location.search);
+      const file = params.get('file');
+      if (!file) {
+        document.getElementById('loading').textContent = 'No device specified.';
+        return;
+      }
+
+      try {
+        // Load JSON for structured data
+        const jsonResp = await fetch('data/devices.json');
+        const allDevices = await jsonResp.json();
+        const device = allDevices.find(d => d._source_file === file);
+
+        // Load raw markdown for body
+        const mdResp = await fetch(`devices/${file}`);
+        if (!mdResp.ok) throw new Error(`File not found: ${file}`);
+        const mdText = await mdResp.text();
+
+        // Extract markdown body (after second ---)
+        const parts = mdText.split('---');
+        const mdBody = parts.length >= 3 ? parts.slice(2).join('---').trim() : mdText;
+
+        render(device, mdBody, file);
+      } catch (e) {
+        document.getElementById('loading').textContent = `Error: ${e.message}`;
+      }
+    }
+
+    function render(device, mdBody, file) {
+      const el = document.getElementById('detail');
+      const d = device || {};
+
+      // Title
+      const name = d.name || file.replace('.md', '');
+      document.title = `${name} — LLM Benchmark`;
+
+      // Specs table
+      const specs = [
+        ['Vendor', d.vendor],
+        ['Type', d.device_type],
+        ['Chip', d.chip],
+        ['Memory', `${d.memory_capacity_gb || '?'} GB ${d.memory_type || ''}`],
+        ['Bandwidth', d.memory_bandwidth_gbs ? `${d.memory_bandwidth_gbs} GB/s` : '?'],
+        ['Claimed TOPS', d.tops_int8 ? `${d.tops_int8} ${d.tops_note ? '(' + d.tops_note + ')' : ''}` : '-'],
+        ['Price', d.price_usd ? `$${d.price_usd}` : '?'],
+        ['Power', d.power_watts ? `${d.power_watts} W` : '?'],
+      ].filter(([, v]) => v && v !== '?')
+       .map(([k, v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join('');
+
+      // Benchmarks table
+      let benchRows = '';
+      if (d.benchmarks && d.benchmarks.length) {
+        benchRows = d.benchmarks.map(b => {
+          let tags = '';
+          if (b.estimated) tags += '<span class="estimated-tag">EST</span>';
+          if (b._suspicious) tags += '<span class="suspicious-tag">SUS</span>';
+          return `<tr>
+            <td>${b.model}${tags}</td>
+            <td>${b.quant || '-'}</td>
+            <td>${b.framework || '-'}</td>
+            <td class="num">${b.decode_tps ?? '-'}</td>
+            <td class="num">${b.prefill_tps ?? '-'}</td>
+            <td>${b.note || b.estimated_from || ''}</td>
+          </tr>`;
+        }).join('');
+      }
+
+      // Render markdown body
+      const htmlBody = marked.parse(mdBody);
+
+      el.innerHTML = `
+        <a class="back-link" href="javascript:history.back()" onclick="if(!document.referrer||!document.referrer.includes(location.host)){location.href='index.html';return false;}">&larr; Back to overview</a>
+        <h1>${name}</h1>
+
+        <div class="table-container">
+          <table class="specs-table"><tbody>${specs}</tbody></table>
+        </div>
+
+        ${benchRows ? `
+        <h2>Benchmarks</h2>
+        <div class="table-container">
+          <table class="bench-table">
+            <thead><tr>
+              <th>Model</th><th>Quant</th><th>Framework</th>
+              <th>Decode tps</th><th>Prefill tps</th><th>Note</th>
+            </tr></thead>
+            <tbody>${benchRows}</tbody>
+          </table>
+        </div>` : ''}
+
+        <div class="md-body">${htmlBody}</div>
+      `;
+    }
+
+    loadDevice();
+  </script>
+</body>
+</html>

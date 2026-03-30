@@ -18,7 +18,7 @@ AI Agents (Claude Code, Cursor, OpenClaw, [PicoClaw](https://github.com/sipeed/p
 
 However, the local inference device market offers a bewildering array of choices with complex specs, and is rife with **misleading and inflated marketing claims**. Users can easily overpay for hardware that fails to meet their expectations.
 
-**This project aims to harness the power of the open-source community to collect real-world LLM inference performance data**, helping users make sound local LLM deployment decisions.
+**This project aims to harness the power of the open-source community to collect real-world LLM inference performance data**, helping users make sound local LLM deployment decisions. **Join the discussion on [Discord](https://discord.gg/ved6aJmZQn)!**
 
 Note: This project focuses on guiding individual users to select local LLM inference devices capable of running AI Agents. Listed devices must be able to run at least a 9B model, and are generally priced under $10,000.
 
